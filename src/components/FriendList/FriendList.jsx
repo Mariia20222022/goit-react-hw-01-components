@@ -15,12 +15,13 @@ export default function FriendList({ friends }) {
     </ul>
   );
 }
-FriendList.prototype = {
+FriendList.propTypes = {
   friends: PropTypes.arrayOf(
     PropTypes.shape({
-      isOnline: bool,
-      avatar: string,
-      name: string,
-    }).isRequired
-  ),
+      id: PropTypes.number.isRequired,
+      isOnline: PropTypes.bool.isRequired,
+      avatar: PropTypes.string.isRequired,
+      name: PropTypes.string.isRequired,
+    })
+  ).isRequired,
 };
